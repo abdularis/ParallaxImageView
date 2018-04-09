@@ -11,6 +11,9 @@ import com.github.abdularis.piv.transformer.ViewTransformer
  * Created by abdularis 07/04/2018
  */
 open class ScrollTransformImageView : ImageView, ViewTreeObserver.OnScrollChangedListener {
+
+    private val viewLocation : IntArray = IntArray(2)
+
     var viewTransformer : ViewTransformer? = null
         set(value) {
             field?.onDetached(this)
@@ -32,8 +35,11 @@ open class ScrollTransformImageView : ImageView, ViewTreeObserver.OnScrollChange
         viewTreeObserver.removeOnScrollChangedListener(this)
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        if (enableTransformer) viewTransformer?.apply(this, canvas)
+    override fun onDraw(canvas: Canvas) {
+        if (enableTransformer) {
+            getLocationInWindow(viewLocation)
+            viewTransformer?.apply(this, canvas, viewLocation[0], viewLocation[1])
+        }
         super.onDraw(canvas)
     }
 

@@ -12,18 +12,13 @@ import com.github.abdularis.piv.ScrollTransformImageView
  *
  * Created by abdularis 07/04/2018
  */
-class VerticalParallaxTransformer : ViewTransformer {
-
-    private val viewLocation : IntArray = IntArray(2)
+class VerticalParallaxTransformer : ViewTransformer() {
 
     override fun onAttached(view: ScrollTransformImageView) {
         view.scaleType = ImageView.ScaleType.CENTER_CROP
     }
 
-    override fun onDetached(view: ScrollTransformImageView) {
-    }
-
-    override fun apply(view: ScrollTransformImageView, canvas: Canvas?) {
+    override fun apply(view: ScrollTransformImageView, canvas: Canvas, viewX : Int, viewY : Int) {
         if (view.scaleType == ImageView.ScaleType.CENTER_CROP) {
             val imageWidth = view.drawable.intrinsicWidth
             val imageHeight = view.drawable.intrinsicHeight
@@ -31,27 +26,19 @@ class VerticalParallaxTransformer : ViewTransformer {
             val viewWidth = view.width - view.paddingLeft - view.paddingRight
             val viewHeight = view.height - view.paddingTop - view.paddingBottom
 
+            val deviceHeight = view.resources.displayMetrics.heightPixels
+
+            if (viewY < -viewHeight || viewY > deviceHeight) return
+
             // if this is true then the scaling must be based on the width of the
             // image view and the bitmap image itself
             if (imageWidth * viewHeight < viewWidth * imageHeight) {
                 val scale = viewWidth.toFloat() / imageWidth.toFloat()
                 val invisibleBitmapHeight = imageHeight * scale - viewHeight
 
-                val deviceHeight = view.resources.displayMetrics.heightPixels
-                val halfDeviceHeight = deviceHeight / 2
-
-                view.getLocationInWindow(viewLocation)
-                val y = when {
-                    viewLocation[1] < -viewHeight -> -viewHeight
-                    viewLocation[1] > deviceHeight -> deviceHeight
-                    else -> viewLocation[1]
-                }
-
+                val y = centeredY(viewY, viewHeight, deviceHeight)
                 val translationScale = invisibleBitmapHeight / (deviceHeight + viewHeight)
-
-                // make y to be vertically centered
-                val translateY = -(y - halfDeviceHeight + viewHeight / 2f) * translationScale
-                canvas?.translate(0f, translateY)
+                canvas.translate(0f, y * translationScale)
             }
         }
     }

@@ -4,9 +4,8 @@ import android.graphics.Canvas
 import com.github.abdularis.piv.ScrollTransformImageView
 
 
-class HorizontalScaleTransformer(minScale : Float) : ViewTransformer {
+class HorizontalScaleTransformer(minScale : Float) : ViewTransformer() {
 
-    private val viewLocation : IntArray = IntArray(2)
     var minScale : Float = minScale
         set (value) {
             field = Math.min(minScale, 1f)
@@ -16,7 +15,8 @@ class HorizontalScaleTransformer(minScale : Float) : ViewTransformer {
 
     override fun onDetached(view: ScrollTransformImageView) {}
 
-    override fun apply(view: ScrollTransformImageView, canvas: Canvas?) {
+    override fun apply(view: ScrollTransformImageView, canvas: Canvas, viewX : Int, viewY : Int) {
+        // TODO: Change the algorithm so that it uses screen centered coordinate
 
         val maxDScale = 1f - minScale
         if (maxDScale > 0f) {
@@ -25,18 +25,17 @@ class HorizontalScaleTransformer(minScale : Float) : ViewTransformer {
 
             val deviceWidth = view.resources.displayMetrics.widthPixels
 
-            view.getLocationInWindow(viewLocation)
             val x = when {
-                viewLocation[0] < -viewWidth -> return
-                viewLocation[0] > deviceWidth -> return
-                else -> viewLocation[0]
+                viewX < -viewWidth -> return
+                viewX > deviceWidth -> return
+                else -> viewX
             }
 
             val center = (deviceWidth - viewWidth) / 2f
             val scaleFactor = maxDScale / ((deviceWidth + viewWidth) / 2f)
             val scale = 1f - (Math.abs(x - center) * scaleFactor)
 
-            canvas?.scale(scale, scale, viewWidth / 2f, viewHeight / 2f)
+            canvas.scale(scale, scale, viewWidth / 2f, viewHeight / 2f)
         }
     }
 
