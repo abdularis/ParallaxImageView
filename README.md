@@ -8,7 +8,7 @@ Creates effect such as vertical parallax, horizontal parallax etc. on android Im
 ## Usage
 - Create vertical parallax image view
 ~~~xml
-<com.github.abdularis.piv.VerticalParallaxImageView
+<com.github.abdularis.piv.VerticalScrollParallaxImageView
     android:id="@+id/image_view"
     android:layout_width="200dp"
     android:layout_height="170dp"
@@ -17,7 +17,7 @@ Creates effect such as vertical parallax, horizontal parallax etc. on android Im
 
 - Create Horizontal parallax image view
 ~~~xml
-<com.github.abdularis.piv.HorizontalParallaxImageView
+<com.github.abdularis.piv.HorizontalScrollParallaxImageView
     android:id="@+id/image_view"
     android:layout_width="200dp"
     android:layout_height="170dp"

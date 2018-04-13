@@ -29,10 +29,10 @@ class HorizontalParallaxTransformer : ViewTransformer() {
             // image view and the bitmap image itself
             if (imageWidth * viewHeight > viewWidth * imageHeight) {
                 val scale = viewHeight.toFloat() / imageHeight.toFloat()
-                val invisibleBitmapWidth = imageWidth * scale - viewWidth
+                val invisibleHorizontalArea = imageWidth * scale - viewWidth
 
                 val x = centeredX(viewX, viewWidth, deviceWidth)
-                val translationScale = invisibleBitmapWidth / (deviceWidth + viewWidth)
+                val translationScale = invisibleHorizontalArea / (deviceWidth + viewWidth)
                 canvas.translate(-x * translationScale, 0f)
             }
         }
