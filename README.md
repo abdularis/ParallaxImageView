@@ -1,9 +1,32 @@
 # Android Parallax Image View
+[![](https://jitpack.io/v/abdularis/ParallaxImageView.svg)](https://jitpack.io/#abdularis/ParallaxImageView)
 
 Creates effect such as vertical parallax, horizontal parallax etc. on android ImageView when it's being vertically or horizontally scrolled (moving) on the screen.
 
 ## Screenshot
 ![](screenshots/screenshot_1.gif)
+
+## Setup
+- **Step 1** Add repository into root build.gradle
+
+~~~xml
+allprojects {
+    repositories {
+    ...
+    maven {
+        url 'https://jitpack.io' }
+    }
+}
+~~~
+
+- **Step 2** Add library dependency into app build.gradle
+
+~~~xml
+dependencies {
+    compile 'com.github.abdularis:ParallaxImageView:1.0'
+}
+~~~
+
 
 ## Usage
 - Create vertical parallax image view
