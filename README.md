@@ -1,5 +1,6 @@
 # Android Parallax Image View
 [![](https://jitpack.io/v/abdularis/ParallaxImageView.svg)](https://jitpack.io/#abdularis/ParallaxImageView)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ParallaxImageView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6906)
 
 Creates effect such as vertical parallax, horizontal parallax etc. on android ImageView when it's being vertically or horizontally scrolled (moving) on the screen.
 
