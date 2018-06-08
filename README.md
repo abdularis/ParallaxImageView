@@ -13,7 +13,7 @@ I wrote an article explaining how this works and implemented, please check it ou
 ## Setup
 - **Step 1** Add repository into root build.gradle
 
-~~~xml
+~~~gradle
 allprojects {
     repositories {
     ...
@@ -25,7 +25,7 @@ allprojects {
 
 - **Step 2** Add library dependency into app build.gradle
 
-~~~xml
+~~~gradle
 dependencies {
     compile 'com.github.abdularis:ParallaxImageView:1.0'
 }
@@ -96,4 +96,6 @@ public class CustomTransformer extends ViewTransformer {
 }
 ~~~
 
+## License
 
+MIT License
