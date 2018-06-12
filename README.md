@@ -27,7 +27,7 @@ allprojects {
 
 ~~~gradle
 dependencies {
-    compile 'com.github.abdularis:ParallaxImageView:1.0'
+    compile 'com.github.abdularis:ParallaxImageView:1.1'
 }
 ~~~
 
