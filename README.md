@@ -5,6 +5,7 @@
 Creates effect such as vertical parallax, horizontal parallax etc. on android ImageView when it's being vertically or horizontally scrolled (moving) on the screen.
 
 I wrote an article explaining how this works and implemented, please check it out
+- [https://abdularis.com/2018/06/06/scroll_parallax_image_view.html](https://abdularis.com/2018/06/06/scroll_parallax_image_view.html)
 - [https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb](https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb)
 
 ## Screenshot
