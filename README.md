@@ -1,4 +1,6 @@
-![](logo/logo_ldpi.png)
+<p align="center">
+    <img src="logo/logo_ldpi.png"/>
+</p>
 
 # Android Parallax Image View
 [![](https://jitpack.io/v/abdularis/ParallaxImageView.svg)](https://jitpack.io/#abdularis/ParallaxImageView)
