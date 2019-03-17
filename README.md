@@ -6,6 +6,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f64b868d7d948f6aaf9544607e16a48)](https://app.codacy.com/app/abdularis/ParallaxImageView?utm_source=github.com&utm_medium=referral&utm_content=abdularis/ParallaxImageView&utm_campaign=Badge_Grade_Dashboard)
 [![](https://jitpack.io/v/abdularis/ParallaxImageView.svg)](https://jitpack.io/#abdularis/ParallaxImageView)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ParallaxImageView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6906)
+[![API](https://img.shields.io/badge/API-14%2B-yellowgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 
 Creates effect such as vertical parallax, horizontal parallax etc. on android ImageView when it's being vertically or horizontally scrolled (moving) on the screen.
 
