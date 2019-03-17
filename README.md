@@ -10,14 +10,14 @@
 Creates effect such as vertical parallax, horizontal parallax etc. on android ImageView when it's being vertically or horizontally scrolled (moving) on the screen.
 
 I wrote an article explaining how this works and implemented, please check it out
-- [https://abdularis.com/2018/06/06/scroll_parallax_image_view.html](https://abdularis.com/2018/06/06/scroll_parallax_image_view.html)
-- [https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb](https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb)
+-   [https://abdularis.com/2018/06/06/scroll_parallax_image_view.html](https://abdularis.com/2018/06/06/scroll_parallax_image_view.html)
+-   [https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb](https://medium.com/@abdularis/android-custom-view-tutorial-scroll-parallax-image-view-2140ac292ecb)
 
 ## Screenshot
 ![](screenshots/screenshot_1.gif)
 
 ## Setup
-- **Step 1** Add repository into root build.gradle
+-   **Step 1** Add repository into root build.gradle
 
 ~~~gradle
 allprojects {
@@ -29,7 +29,7 @@ allprojects {
 }
 ~~~
 
-- **Step 2** Add library dependency into app build.gradle
+-   **Step 2** Add library dependency into app build.gradle
 
 ~~~gradle
 dependencies {
@@ -37,9 +37,8 @@ dependencies {
 }
 ~~~
 
-
 ## Usage
-- Create vertical parallax image view
+-   Create vertical parallax image view
 ~~~xml
 <com.github.abdularis.piv.VerticalScrollParallaxImageView
     android:id="@+id/image_view"
@@ -48,7 +47,7 @@ dependencies {
     android:src="@drawable/img1"/>
 ~~~
 
-- Create Horizontal parallax image view
+-   Create Horizontal parallax image view
 ~~~xml
 <com.github.abdularis.piv.HorizontalScrollParallaxImageView
     android:id="@+id/image_view"
@@ -57,7 +56,7 @@ dependencies {
     android:src="@drawable/img1"/>
 ~~~
 
-- Create and customize effect on your own
+-   Create and customize effect on your own
 ~~~xml
 <com.github.abdularis.piv.ScrollTransformImageView
     android:id="@+id/image_view"
