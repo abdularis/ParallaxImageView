@@ -3,7 +3,9 @@ package com.github.abdularis.piv.transformer
 import android.graphics.Canvas
 import com.github.abdularis.piv.ScrollTransformImageView
 
-
+/**
+ * This transformer will scale image view when scrolled horizontally
+ */
 class HorizontalScaleTransformer(minScale : Float) : ViewTransformer() {
 
     var minScale : Float = minScale

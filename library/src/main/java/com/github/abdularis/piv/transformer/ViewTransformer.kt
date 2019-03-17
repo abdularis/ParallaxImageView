@@ -5,6 +5,9 @@ import com.github.abdularis.piv.ScrollTransformImageView
 
 /**
  * Created by abdularis 07/04/2018
+ *
+ * Base class for all transformer, extends this class to implement custom
+ * image view transformation before it's being rendered on the screen
  */
 abstract class ViewTransformer {
 
